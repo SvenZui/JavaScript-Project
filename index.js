@@ -297,7 +297,7 @@ let introShown = false
 
 
 function startGame() {
-	playerName = prompt("Введи своє ім'я слідчого")
+	playerName = promptWithCheck("Введи своє ім'я слідчого")
 	gameStarted = true
 	introShown = true
 	chapter = 1
@@ -308,7 +308,7 @@ function startGame() {
 
 function showMainMenu() {
 	menuOpen = true
-	menuOption = prompt(
+	menuOption = promptWithCheck(
 		"ГРА: П'ЯТЬ ХВИЛИН ТИШІ\n\n" +
 		"1 - Почати зміну\n" +
 		"2 - Швидке проходження\n" +
@@ -341,7 +341,7 @@ function corridorEvent() {
 	tensionLevel = tensionLevel + 10
 	alert("У коридорі холодно. Світло мерехтить.")
 
-	let choice = prompt(
+	let choice = promptWithCheck(
 		"ТИ В КОРИДОРІ\n" +
 		"1 - Піти далі\n" +
 		"2 - Повернутися в кімнату\n" +
@@ -436,7 +436,7 @@ function showCorridorScene() {
 }
 
 function chooseCorridorAction() {
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"ОБЕРИ ДІЮ:\n" +
 		"1 - Залишитися в кімнаті спостереження\n" +
 		"2 - Вийти в коридор\n" +
@@ -506,7 +506,7 @@ function nextNightEvent() {
 
 function encounterShadow() {
 	shadowSeen = true
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"ТИ БАЧИШ ТІНЬ У КОРИДОРІ\n" +
 		"1 - Піти за нею\n" +
 		"2 - Повернутися назад\n" +
@@ -565,7 +565,7 @@ function dangerMoment() {
 function nightOutcome() {
 	alert("Напруга досягає піку, але ніч триває.")
 
-	let choice = prompt(
+	let choice = promptWithCheck(
 		"ЩО РОБИТИ ДАЛІ?\n" +
 		"1 - Залишитися на місці\n" +
 		"2 - Піти до складу\n" +
@@ -595,7 +595,7 @@ function approachWarehouse() {
 }
 
 function warehouseDoorEvent() {
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"БІЛЯ ДВЕРЕЙ СКЛАДУ\n" +
 		"1 - Відкрити двері\n" +
 		"2 - Повернутися\n" +
@@ -615,6 +615,19 @@ function handleWarehouseChoice(choice) {
 		listenAtDoor()
 	}
 }
+
+function promptWithCheck(message) {
+    let input = "";
+    do {
+        input = prompt(message);
+        if (input === null) {
+            alert("Введення обов'язкове");
+        }
+        input = input.trim();
+    } while (input === "");
+    return input;
+}
+
 
 function openWarehouse() {
 	if (warehouseDoorLocked == true) {
@@ -682,7 +695,7 @@ function startInvestigation() {
 
 function interrogatePartner() {
 	shiftPartnerInterrogated = true
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"ДОПИТ ЗМІННИКА\n" +
 		"1 - Тиснути на нього\n" +
 		"2 - Бути спокійним\n" +
@@ -926,7 +939,7 @@ function runDialogue() {
 		return
 	}
 
-	let choice = prompt(
+	let choice = promptWithCheck(
 		text +
 		"\n\nКОНТЕКСТНЕ МЕНЮ\n" +
 		"1 - Продовжити\n" +
@@ -1288,7 +1301,7 @@ function ambientNightLoop() {
 
 function shadowWhisperEvent() {
 	alert("ТИ ЧУЄШ ШЕПІТ У КОРИДОРІ")
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"ОБЕРИ ДІЮ:\n" +
 		"1 - Прислухатись\n" +
 		"2 - Увімкнути ліхтар\n" +
@@ -1341,7 +1354,7 @@ function panicEffect() {
 
 function corridorDeepEvent() {
 	alert("ТИ ПРОСУВАЄШСЯ ДАЛІ КОРИДОРОМ")
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"ПЕРЕД ТОБОЮ РОЗВИЛКА\n" +
 		"1 - Ліворуч до складу\n" +
 		"2 - Праворуч до запасного виходу\n" +
@@ -1372,7 +1385,7 @@ function emergencyExitPath() {
 }
 
 function emergencyDoorEvent() {
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"БІЛЯ ЗАПАСНОГО ВИХОДУ\n" +
 		"1 - Відчинити двері\n" +
 		"2 - Повернутися\n" +
@@ -1424,7 +1437,7 @@ function warehouseExtendedScene() {
 	if (warehouseLightsOn == false) {
 		alert("У СКЛАДІ ТЕМНО")
 	}
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"ВСЕРЕДИНІ СКЛАДУ\n" +
 		"1 - Увімкнути світло\n" +
 		"2 - Оглянути коробки\n" +
@@ -1473,7 +1486,7 @@ function morningExtendedPhase() {
 }
 
 function extendedInterrogation() {
-	playerChoice = prompt(
+	playerChoice = promptWithCheck(
 		"РОЗШИРЕНИЙ ДОПИТ\n" +
 		"1 - Поставити технічні питання\n" +
 		"2 - Згадати ніч\n" +
@@ -1682,7 +1695,7 @@ function loadGame(slot) {
 }
 
 function pauseMenu() {
-	let choice = prompt(
+	let choice = promptWithCheck(
 		"ПАУЗА\n" +
 		"1 - Продовжити\n" +
 		"2 - Інвентар\n" +
@@ -1698,7 +1711,7 @@ function pauseMenu() {
 		unifiedGameFlow()
 	}
 	if (choice == "3") {
-		let s = prompt("Оберіть слот 1-3")
+		let s = promptWithCheck("Оберіть слот 1-3")
 		saveGame(s)
 		unifiedGameFlow()
 	}
