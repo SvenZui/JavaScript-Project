@@ -246,10 +246,8 @@ secretEndingAvailable — чи відкритий секретний фінал.
 finalVerdict — остаточне рішення слідства.
 
 
-https://docs.google.com/presentation/d/1hLcbh5DmZokf-_1ohtK68hH5-SWLfFSt8In7t5W1DY8/edit?slide=id.p1#slide=id.p1
-https://docs.google.com/presentation/d/1hLcbh5DmZokf-_1ohtK68hH5-SWLfFSt8In7t5W1DY8/edit?slide=id.p1#slide=id.p1
-https://docs.google.com/presentation/d/1hLcbh5DmZokf-_1ohtK68hH5-SWLfFSt8In7t5W1DY8/edit?slide=id.p1#slide=id.p1
-https://docs.google.com/presentation/d/1hLcbh5DmZokf-_1ohtK68hH5-SWLfFSt8In7t5W1DY8/edit?slide=id.p1#slide=id.p1
+https://docs.google.com/presentation/d/1hLcbh5DmZokf-_1ohtK68hH5-SWLfFSt8In7t5W1DY8/present
+
 Але навіть після цього ніч у торговому центрі вже ніколи не буде такою, як раніше. Тиша там більше не здається просто спокійною — вона нагадує про те, що сталося.
 
 Бо навіть тиша залишає сліди.
